@@ -1,3 +1,3 @@
-class Song < ApplicationRecord
+class Review < ApplicationRecord
   belongs_to :project
 end
