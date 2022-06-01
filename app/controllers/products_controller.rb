@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  
   def index
     @products = Product.all
     render :index
@@ -33,7 +34,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to products_path
     else
-      redner :edit
+      render :edit
     end
   end
 
