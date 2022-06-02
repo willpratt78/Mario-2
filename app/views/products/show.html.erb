@@ -3,17 +3,20 @@
 <h3><%= @product.country_of_origin %></h3>
 
 <% if @product.reviews.any? %>
-  <h4>Here are the reviews for this product:</h4>
+  <h4>Reviews:</h4>
 
   <% @product.reviews.each do |review| %>
     <ul>
       <li>
-        <%= link_to review.name, product_review_path(@product, review) %>
+        <h2>Reviewed by: <%= @review.author %></h2>
+        <h3>Rating out of 5: <%= @review.rating %></h3>
+        <h3><%= @review.content_body %></h3>
       </li>
     </ul>
   <% end %>
 <% else %>
-  <p>No reviews are currently listed for this product.</p>
+  <p>No reviews are listed yet, <%= link_to "Add one here!", new_product_review_path(@product) %></p>
+  
 <% end %>
 
 <p><%= link_to "Edit", edit_product_path(@product) %></p>
