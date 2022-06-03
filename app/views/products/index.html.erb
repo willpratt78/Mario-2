@@ -10,6 +10,6 @@
   <p>There are no products yet.</p>
 <% end %>
 
-<%= link_to "Product with most reviews!", products_path(@products.most_reviews) %>
+<%= link_to "Product with most reviews!", product_path(Product.most_reviews[0]) %>
 
 <p><%= link_to "Create new product", new_product_path %></p>

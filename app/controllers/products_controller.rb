@@ -5,10 +5,6 @@ class ProductsController < ApplicationController
     render :index
   end
 
-  def most_reviews
-    @products = Product.most_reviews
-    render :show
-  end
 
   def new
     @product = Product.new
