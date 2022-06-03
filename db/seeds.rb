@@ -11,8 +11,14 @@ Product.destroy_all
 50.times do |index|
   Product.create!(name: Faker::Food.spice,
                         cost: Faker::Number.between(from: 0, to: 6),
-                        country_of_origin: Faker::Lorem.sentence(1, false, 0).chop)
-                        
+                        country_of_origin: Faker::Lorem.sentence(1, false, 0).chop)  
 end
+
+# 5.times do |index|
+#   Review.create!(author: Faker::Name.new,
+#                           content_body: Faker::Lorem.sentence(55, false, 0).chop,
+#                           rating: Faker::Number.between(from: 0, to: 6),
+#                           product: product)
+# end
 
 p "Created #{Product.count} spices"
