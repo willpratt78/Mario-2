@@ -10,6 +10,8 @@ class Product < ApplicationRecord
 
   scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
 
+  scope :usa, -> { where(country_of_origin: "USA") }
+
   has_many :reviews, dependent: :destroy
   validates :name, presence: true
   validates :cost, presence: true
