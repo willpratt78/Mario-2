@@ -10,6 +10,13 @@
   <p>There are no products yet.</p>
 <% end %>
 
-<%= link_to "Product with most reviews!", product_path(Product.most_reviews[0]) %>
+<p><%= link_to "Product with most reviews!", product_path(Product.most_reviews[0]) %></p>
+
+<p>The 3 newest products are:</p>
+<p><%= link_to "#{Product.three_most_recent[0].name}", product_path(Product.three_most_recent[0]) %></p>
+<p><%= link_to "#{Product.three_most_recent[1].name}", product_path(Product.three_most_recent[1]) %></p>
+<p><%= link_to "#{Product.three_most_recent[2].name}", product_path(Product.three_most_recent[2]) %></p>
+
+
 
 <p><%= link_to "Create new product", new_product_path %></p>

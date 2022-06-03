@@ -8,6 +8,8 @@ class Product < ApplicationRecord
     .limit(1)
   )}
 
+  scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
+
   has_many :reviews, dependent: :destroy
   validates :name, presence: true
   validates :cost, presence: true
