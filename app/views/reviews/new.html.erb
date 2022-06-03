@@ -1,10 +1,10 @@
 <h1>Add a new review:</h1>
 
 
-<% if @product.errors.any? %>
+<% if @review.errors.any? %>
   <h3>Please fix these errors:</h3>
     <ul>
-      <% @product.errors.full_messages.each do |message|%>
+      <% @review.errors.full_messages.each do |message|%>
         <li><%= message %></li>
       <% end %>
     </ul>
@@ -19,3 +19,5 @@
   <%= f.number_field :rating%>
   <p><%= f.submit %></p>
 <% end %>
+
+<p><%= link_to "Return to products", products_path %></p>

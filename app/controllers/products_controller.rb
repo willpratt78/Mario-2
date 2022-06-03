@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    render_to_body :file => "app/views/products/new.html.erb"
+    render :new
   end
 
   def create
