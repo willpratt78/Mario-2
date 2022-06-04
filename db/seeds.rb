@@ -9,16 +9,17 @@
 Product.destroy_all
 
 50.times do |index|
-  Product.create!(name: Faker::Food.spice,
-                        cost: Faker::Number.between(from: 0, to: 6),
-                        country_of_origin: Faker::Lorem.sentence(1, false, 0).chop)  
+  product = Product.create!(name: Faker::Food.spice,
+                        cost: Faker::Number.between(from: 1, to: 5),
+                        country_of_origin: Faker::Lorem.sentence(1, false, 0).chop
+                      )  
+
+  5.times do |index|
+    review = Review.create!(author: Faker::Name.first_name,
+                            content_body: Faker::Lorem.characters(number: 60),
+                            rating: Faker::Number.between(from: 1, to: 5),
+                            product_id: product.id)
+  end
 end
 
-# 5.times do |index|
-#   Review.create!(author: Faker::Name.new,
-#                           content_body: Faker::Lorem.sentence(55, false, 0).chop,
-#                           rating: Faker::Number.between(from: 0, to: 6),
-#                           product: product)
-# end
-
-p "Created #{Product.count} spices"
+p "Created #{Product.count} spices, and #{Review.count} reviews"
