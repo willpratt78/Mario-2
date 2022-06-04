@@ -22,4 +22,6 @@ Product.destroy_all
   end
 end
 
+Product.destroy_all
+
 p "Created #{Product.count} spices, and #{Review.count} reviews"

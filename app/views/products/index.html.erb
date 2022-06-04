@@ -13,13 +13,24 @@
 <% if Product.most_reviews[0] %>
   <p><%= link_to "#{Product.most_reviews[0].name} currently has the most reviews", product_path(Product.most_reviews[0]) %></p>
 <% else %>
-  <p>Currently all products have the same number of reviews, add one to see the most reviewed item!</p>
 <% end %>
 
-<p>The 3 newest products are:</p>
+<% if Product.three_most_recent[0] && Product.three_most_recent[1] && Product.three_most_recent[2]%>
+  <p>The 3 newest products are:</p>
 <p><%= link_to "#{Product.three_most_recent[0].name}", product_path(Product.three_most_recent[0]) %></p>
 <p><%= link_to "#{Product.three_most_recent[1].name}", product_path(Product.three_most_recent[1]) %></p>
 <p><%= link_to "#{Product.three_most_recent[2].name}", product_path(Product.three_most_recent[2]) %></p>
+<% elsif Product.three_most_recent[0] && Product.three_most_recent[1] %>
+  <p>The 2 newest products are:</p>
+  <p><%= link_to "#{Product.three_most_recent[0].name}", product_path(Product.three_most_recent[0]) %></p>
+  <p><%= link_to "#{Product.three_most_recent[1].name}", product_path(Product.three_most_recent[1]) %></p>
+<% elsif Product.three_most_recent[0] %>
+  <p>The newest product is:</p>
+  <p><%= link_to "#{Product.three_most_recent[0].name}", product_path(Product.three_most_recent[0]) %></p>
+<% else %>
+  <p>There are currently no Products listed</p>
+<% end %>
+
 
 <% if @products.usa.any? %>
   <p>These Products are made in the USA</p>
