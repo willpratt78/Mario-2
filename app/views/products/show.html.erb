@@ -20,10 +20,13 @@
 
 <p><%= link_to "Add a review here!", new_product_review_path(@product) %></p></p>
 
-
-<p><%= link_to "Edit", edit_product_path(@product) %></p>
-<p><%= link_to "Delete", product_path(@product),
+<% if current_user && current_user.admin %>
+  <p><%= link_to "Edit", edit_product_path(@product) %></p>
+  <p><%= link_to "Delete", product_path(@product),
                           :data => {:confirm => "You sure?",
                                     :method => "delete"} %></p>
+<% else %>
+<% end %>
+
 
 <p><%= link_to "Return to products", products_path %></p>
