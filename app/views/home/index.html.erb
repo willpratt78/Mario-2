@@ -1,17 +1,11 @@
-<h1>Products</h1>
+<h1>Welcome to Mario's doos stuffs!</h1>
 
-<% if @products.any? %>
-  <ul>
-    <% @products.each do |product|%>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no products yet.</p>
-<% end %>
+<h4>Here's what's new, what people are talking about, and how to look at all of our peoducts.</h4>
+
+
 
 <% if Product.most_reviews[0] %>
-  <p><%= link_to "#{Product.most_reviews[0].name} currently has the most reviews", product_path(Product.most_reviews[0]) %></p>
+  <p><%= link_to "#{Product.most_reviews[0].name}", product_path(Product.most_reviews[0]) %> currently has the most reviews</p>
 <% else %>
 <% end %>
 
@@ -32,16 +26,5 @@
 <% end %>
 
 
-<% if @products.usa.any? %>
-  <p>These Products are made in the USA</p>
-  <ul>
-    <% @products.usa.each do |product|%>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no American made products yet.</p>
-<% end %>
-
-<p><%= link_to "Create new product", new_product_path %></p>
+<p><%= link_to "Return to products", products_path %></p>
 

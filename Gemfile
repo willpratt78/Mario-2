@@ -37,6 +37,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'
 
+gem 'devise'
+
 gem "faker"
 
 group :test do
