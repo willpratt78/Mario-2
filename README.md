@@ -32,10 +32,13 @@ Application will have you create a user account, if you're an admin you have ful
 * Navigate to webpage and log-in to make an account
 * To make account an admin go to VSC terminal and run rails c, type @user = User.first (replace first with correct  naming convention based off user id number, ie id 2 is User.second), then type @user.admin = true
 * Run rake db:seed to seed database with 50 products(spices), and 250 reviews
+* Create a product with the country as 'USA'(case sensative) and navigate to home page to have it list products made in USA
 
 ## Known Bugs
 
-* If all products have the same number of reviews one will be chosen randomly as "most reviews"
+* If all products have the same number of reviews one will be chosen randomly as "most reviews", if another review is added it corrects
+* USA is currently case sensative to USA
+
 
 ## License
 
