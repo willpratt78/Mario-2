@@ -1,24 +1,44 @@
-# README
+#  Mario's food
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Application will let you create products, user accounts, and reviews
 
-Things you may want to cover:
+#### By Will Pratt
 
-* Ruby version
+## Technologies Used
 
-* System dependencies
+* ruby
+* rspec
+* pry
+* Sass
+* Rails
+* BootStrap
 
-* Configuration
 
-* Database creation
+## Description
 
-* Database initialization
+Application will have you create a user account, if you're an admin you have full CRUD functionality for products, if not you can comment reviews on products.
 
-* How to run the test suite
+## Setup/Installation Requirements
 
-* Services (job queues, cache servers, search engines, etc.)
+* Navigate to Repository 
+* Copy Repo address
+* Clone Repo to computer
+* Navigete to directory in terminal
+* Open repo in VSC using terminal 
+* Run bundle in terminal
+* navigate to config/database.yml and remove or replace password as you need
+* Run rake db:create
+* Run rails s
+* Navigate to webpage and log-in to make an account
+* To make account an admin go to VSC terminal and run rails c, type @user = User.first (replace first with correct  naming convention based off user id number, ie id 2 is User.second), then type @user.admin = true
+* Run rake db:seed to seed database with 50 products(spices), and 250 reviews
 
-* Deployment instructions
+## Known Bugs
 
-* ...
+* If all products have the same number of reviews one will be chosen randomly as "most reviews"
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 6/6/22 _William Pratt_
