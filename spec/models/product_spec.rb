@@ -5,8 +5,6 @@ require 'rails_helper'
   it { should validate_presence_of :name}
   it { should validate_presence_of :cost }
   it { should validate_presence_of :country_of_origin }
-  it { should validate_numericality_of(:cost).is_greater_than_or_equal_to(0) }
-
 
   it("titalizes the name of an product") do
     product = Product.create({name: "olive oil", cost: "15.99", country_of_origin: "Italy"})
